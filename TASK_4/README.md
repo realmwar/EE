@@ -17,12 +17,12 @@ The infrastructure contains 4 nodes:
 - **swarmslave1** has installed Docker Enterprise Edition with *Docker Swarm* and *Docker Compose*. This node is a **WORKER NODE** of the *Docker Swarm* cluster;
 - **swarmslave2** has installed Docker Enterprise Edition with *Docker Swarm* and *Docker Compose*. This node is a **WORKER NODE** of the *Docker Swarm* cluster.
 
-<br />
+
 The infrastructure is installed from a vagrantfile:
 - **jenkinsmaster** bootstraps from **jenkins_install.sh** script;
 - **swarmmaster**, **swarmslave1**, **swarmslave2** bootstrap from **docker_install.sh** script.
 
-<br />
+
 NOTE: helpful link for with personal Docker Entreprise Edition set up information https://store.docker.com/my-content
 ![](/TASK_4/scr/ee_setup.jpg)
 <br />
@@ -67,35 +67,25 @@ NOTE: helpful link for with personal Docker Entreprise Edition set up informatio
     INFO[0042] Username: administrator
     INFO[0042] Password: (your admin password)
     
-<br />
-<hr>
-<br />
+
 #### UCP web UI login with administrator credentials
 ![](/TASK_4/scr/ucp_login.png)
-<br />
-<hr>
-<br />
+
 #### Upload license from downloaded **docker_subscription.lic** file
 ![](/TASK_4/scr/ucp_upload_license.jpg)
-<br />
-<hr>
-<br />
+
 ### Dashboard:
 ![](/TASK_4/scr/ee_dashboard.jpg)
 ### We can see license information in few steeps
 - Navigate to the Admin Settings page and in the left pane and click  License.
 
 ![](/TASK_4/scr/ee_license.jpg)
-<br />
-<hr>
-<br />
+
 ### Also we can see and change Cluster configuration
 - For example change Controller port value to 1443.
 
 ![](/TASK_4/scr/cluster_configuration.jpg)
-<br />
-<hr>
-<br />
+
 ### DTR install:
     $ docker run -it --rm docker/dtr install  --ucp-node swarmmaster  --ucp-username administrator  --ucp-url http://swarmmaster:1443  --ucp-insecure-tls
 #### Output:
@@ -161,29 +151,22 @@ NOTE: helpful link for with personal Docker Entreprise Edition set up informatio
     INFO[0146] Installation is complete
     INFO[0146] Replica ID is set to: daa7b23c3a61
     INFO[0146] You can use flag '--existing-replica-id daa7b23c3a61' when joining other replicas to your Docker Trusted Registry Cluster
-<br />
-<hr>
-<br />
+
 ### Connect WORKER NODES to MASTER NODE:
     docker swarm join --token SWMTKN-1-54gtmj7jweybi9hghhmzz3pejl2pe7h7v63knejczreer4z2w4-1l5673p54ydoag33oc5ipn0uh 10.23.13.250:2377
 #### Output:
     This node joined a swarm as a worker.
-<br />
-<hr>
-<br />
+
 ### Jenkins Jobs's configuration:
 
 - Source Code Managment
 
 ![](/TASK_4/scr/job_scm.jpg)
-<br />
 
 - Build
 
 ![](/TASK_4/scr/job_build.jpg)
-<br />
-<hr>
-<br />
+
 ### Jenkins Jobs's Console Output:
     Console Output
     Started by user anonymous
@@ -443,8 +426,6 @@ NOTE: helpful link for with personal Docker Entreprise Edition set up informatio
     yf5jb5pi8omk        metrics_notification-mongodb   replicated          1/1                 sqshq/piggymetrics-mongodb:latest
     zj3cc55odg0t        metrics_rabbitmq               replicated          1/1                 rabbitmq:3-management                            *:15672->15672/tcp
     Finished: SUCCESS
-<br />
-<hr>
-<br />
+
 ### Docker EE Dashboard -> Services
 ![](/TASK_4/scr/ee_services.jpg)
