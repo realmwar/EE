@@ -25,9 +25,7 @@ The infrastructure is installed from a vagrantfile:
 
 NOTE: helpful link for with personal Docker Entreprise Edition set up information https://store.docker.com/my-content
 ![](/TASK_4/scr/ee_setup.jpg)
-<br />
-<hr>
-<br />
+
 ## When bootstrap process has been done need to install **UCP** and **DTR** on the **swarmmaster** node.
 ### UCP install:
     $ docker image pull docker/ucp:2.2.4
