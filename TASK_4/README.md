@@ -10,8 +10,6 @@
 - set Docker container as Jenkins slave (container must start before the build)
 
 ## 3) deploy the application as Docker stack app in swarm cluster
-
-## Deadline: 30-March-2018 23:59 (Kiev)
 <br />
 <hr>
 <br />
