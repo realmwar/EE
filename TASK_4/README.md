@@ -10,9 +10,7 @@
 - set Docker container as Jenkins slave (container must start before the build)
 
 ## 3) deploy the application as Docker stack app in swarm cluster
-<br />
-<hr>
-<br />
+
 The infrastructure contains 4 nodes:
 - **jenkinsmaster** has installed Jenkins for jobs runs. **swarmmaster** node is a **jenkinsmaster**'s slave where job will run; 
 - **swarmmaster** has installed Docker Enterprise Edition with *Docker Swarm*, *Docker Compose*, *Universal Control Plane* (**UCP**) and *Docker Trusted Registry* (**DTR**). This node is a **MASTER NODE** of the *Docker Swarm* cluster;
